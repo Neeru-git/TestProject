@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="17060" started-at="2020-06-08T12:54:10 EDT" finished-at="2020-06-08T12:54:27 EDT">
+  <suite name="Default suite" duration-ms="17224" started-at="2020-06-13T17:10:20 EDT" finished-at="2020-06-13T17:10:37 EDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="17060" started-at="2020-06-08T12:54:10 EDT" finished-at="2020-06-08T12:54:27 EDT">
-      <class name="testWebA.Automate_Components">
-        <test-method status="PASS" signature="method1()[pri:0, instance:testWebA.Automate_Components@4f970963]" name="method1" duration-ms="17031" started-at="2020-06-08T12:54:10 EDT" finished-at="2020-06-08T12:54:27 EDT">
+    <test name="Default test" duration-ms="17224" started-at="2020-06-13T17:10:20 EDT" finished-at="2020-06-13T17:10:37 EDT">
+      <class name="testWebA.AutomateComponents">
+        <test-method status="PASS" signature="startDriver()[pri:0, instance:testWebA.AutomateComponents@610694f1]" name="startDriver" is-config="true" duration-ms="12748" started-at="2020-06-13T17:10:20 EDT" finished-at="2020-06-13T17:10:33 EDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- method1 -->
-      </class> <!-- testWebA.Automate_Components -->
+        </test-method> <!-- startDriver -->
+        <test-method status="PASS" signature="alertHandling()[pri:0, instance:testWebA.AutomateComponents@610694f1]" name="alertHandling" duration-ms="3689" started-at="2020-06-13T17:10:33 EDT" finished-at="2020-06-13T17:10:36 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- alertHandling -->
+        <test-method status="PASS" signature="closeMethod()[pri:0, instance:testWebA.AutomateComponents@610694f1]" name="closeMethod" is-config="true" duration-ms="700" started-at="2020-06-13T17:10:36 EDT" finished-at="2020-06-13T17:10:37 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeMethod -->
+      </class> <!-- testWebA.AutomateComponents -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

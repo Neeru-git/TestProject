@@ -3,11 +3,16 @@ package testWebA;
 import static org.testng.Assert.assertEquals;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -17,14 +22,15 @@ import org.testng.annotations.Test;
 public class AutomateComponents {
 	WebDriver driver;
 	String url = "https://rahulshettyacademy.com/AutomationPractice/";
+	String url1="https://www.testandquiz.com/selenium/testing.html";
 
 	@BeforeTest(enabled = true)
 	public void startDriver() throws InterruptedException {
-		System.out.println("***First method test***");
+		System.out.println("***Starting the web driver***");
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\sheka\\Downloads\\selen\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get(url);
-		Thread.sleep(2000);
+		//Thread.sleep(500);
 		driver.manage().window().maximize();
 		System.out.println("Title of the website :" + driver.getTitle());
 		System.out.println("My Job is done, your browser is open");
@@ -78,7 +84,7 @@ public class AutomateComponents {
 		driver.quit();
 	}
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void alertHandling() throws InterruptedException {
 		driver.findElement(By.xpath("//input[@id='name']")).sendKeys("Neeru");
 		driver.findElement(By.xpath("//input[@id='alertbtn']")).click();
@@ -91,12 +97,62 @@ public class AutomateComponents {
 		driver.findElement(By.xpath("//input[@id='name']")).sendKeys("Neeru");
 		driver.findElement(By.xpath("// input[@id='confirmbtn']")).click();
 		System.out.println("Confirm alert text "+driver.switchTo().alert().getText());
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		driver.switchTo().alert().dismiss();
 		
 	}
+	@Test(enabled=true)
 	public void tableData() {
 		////table[@id='product']/tbody/tr
+		
+		WebElement myElement = driver.findElement(By.xpath("//table[@id='product']/tbody"));
+		System.out.println(myElement.getText());
+		List<WebElement> myRows=myElement.findElements(By.xpath("//table[@id='product']/tbody/tr"));
+		int noOfRows=myRows.size();
+		System.out.println("No.of rows in the table "+noOfRows);
+		
+	}
+	@Test(enabled=false)
+	public void elementDisplayedEx() {
+		
+		//WebElement showButton=driver.findElement(By.xpath("//input[@id='show-textbox']"));
+		System.out.println("Entering the method");
+		WebElement visibleField=driver.findElement(By.xpath("//input[@id='displayed-text']"));
+		
+		if(visibleField.isDisplayed()) {
+			driver.findElement(By.xpath("//input[@id='hide-textbox']")).click();
+		}
+		else {
+			System.out.println("Already hidden");
+		}
+		
+	}
+	@Test(enabled=true)
+	public void mouseHover() throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,1000)");
+		//Thread.sleep(500);
+		Actions act1= new Actions(driver);
+		WebElement mouseMove = driver.findElement(By.xpath("//button[@id='mousehover']"));
+		act1.moveToElement(mouseMove).perform();
+		//Thread.sleep(1000);
+		driver.findElement(By.xpath("//a[text()='Top']")).click();		
+		
+	}
+	
+	
+	@Test(enabled=false)
+	
+	public void dragAndDrop() throws InterruptedException {
+		//url-https://www.testandquiz.com/selenium/testing.html
+		WebElement from =driver.findElement(By.xpath("//img[@id='sourceImage']"));
+		WebElement to = driver.findElement(By.xpath("//div[@id='targetDiv']"));  
+		Actions act = new Actions(driver);
+		//act.clickAndHold(from).moveByOffset(-1, -1).clickAndHold(to).release(to).build().perform();
+		act.dragAndDrop(from, to).release().perform();
+		//Thread.sleep(500);
+		System.out.println("Drag and drop done!");
+		// THIS CODE IS NT WORKING for me
 	}
 
 	@AfterTest(enabled = true)

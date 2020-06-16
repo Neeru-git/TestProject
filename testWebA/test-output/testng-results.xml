@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
+<testng-results skipped="0" failed="0" ignored="7" total="8" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="17224" started-at="2020-06-13T17:10:20 EDT" finished-at="2020-06-13T17:10:37 EDT">
+  <suite name="Default suite" duration-ms="21318" started-at="2020-06-16T16:08:02 EDT" finished-at="2020-06-16T16:08:24 EDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="17224" started-at="2020-06-13T17:10:20 EDT" finished-at="2020-06-13T17:10:37 EDT">
+    <test name="Default test" duration-ms="21318" started-at="2020-06-16T16:08:02 EDT" finished-at="2020-06-16T16:08:24 EDT">
       <class name="testWebA.AutomateComponents">
-        <test-method status="PASS" signature="startDriver()[pri:0, instance:testWebA.AutomateComponents@610694f1]" name="startDriver" is-config="true" duration-ms="12748" started-at="2020-06-13T17:10:20 EDT" finished-at="2020-06-13T17:10:33 EDT">
+        <test-method status="PASS" signature="startDriver()[pri:0, instance:testWebA.AutomateComponents@5c5a1b69]" name="startDriver" is-config="true" duration-ms="19551" started-at="2020-06-16T16:08:02 EDT" finished-at="2020-06-16T16:08:22 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startDriver -->
-        <test-method status="PASS" signature="alertHandling()[pri:0, instance:testWebA.AutomateComponents@610694f1]" name="alertHandling" duration-ms="3689" started-at="2020-06-13T17:10:33 EDT" finished-at="2020-06-13T17:10:36 EDT">
+        <test-method status="PASS" signature="mouseHover()[pri:0, instance:testWebA.AutomateComponents@5c5a1b69]" name="mouseHover" duration-ms="1740" started-at="2020-06-16T16:08:22 EDT" finished-at="2020-06-16T16:08:24 EDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- alertHandling -->
-        <test-method status="PASS" signature="closeMethod()[pri:0, instance:testWebA.AutomateComponents@610694f1]" name="closeMethod" is-config="true" duration-ms="700" started-at="2020-06-13T17:10:36 EDT" finished-at="2020-06-13T17:10:37 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeMethod -->
+        </test-method> <!-- mouseHover -->
       </class> <!-- testWebA.AutomateComponents -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
